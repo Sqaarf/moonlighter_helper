@@ -1,13 +1,17 @@
 from Scrapers import ItemScraper
 
 if __name__ == "__main__":
-    item = input("Prompt the item : ")
-
     scraper = ItemScraper()
+    
+    while True:
+        item = input("Prompt the item : ")
 
-    name = scraper.getItem(item)['Name']
-    pprice = scraper.getItem(item)['Perfect Price (Popular)']
-    price = scraper.getItem(item)['Perfect Price']
+        if item == "exit" or item == "":
+            break
 
-    print(f"{name} | ↑ {pprice} | - {price}")
+        name = scraper.getItem(item)['Name']
+        pprice = scraper.getItem(item)['Perfect Price (Popular)']
+        price = scraper.getItem(item)['Perfect Price']
+
+        print(f"{name} | ↑ {pprice} | - {price}")
 
