@@ -7,7 +7,6 @@ class ItemScraper:
         self.soup = bs(self.page.text, "html.parser")
 
         tr_tags = self.soup.find_all("div", attrs={"class": "bb_table_tr"})[:242]
-        # pprint(tr_tags)
 
         td_tags = []
 
